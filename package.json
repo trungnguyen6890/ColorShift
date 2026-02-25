@@ -1,0 +1,14 @@
+{
+  "name": "color-shift-reactor",
+  "version": "1.0.0",
+  "description": "Hyper casual web game using Cloudflare Pages",
+  "scripts": {
+    "dev": "wrangler pages dev .",
+    "lint": "eslint src/ functions/",
+    "check": "node scripts/check.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "wrangler": "^4.68.1"
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Color Shift Reactor</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Heads Up Display -->
+        <div id="hud" class="hidden">
+            <div class="hud-top">
+                <div class="score-box">
+                    <span id="scoreDisplay">0</span>
+                    <span id="multiplierDisplay" class="multiplier">x1</span>
+                </div>
+                <div class="flux-box">
+                    <span class="flux-icon">✧</span> <span id="fluxDisplay">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Menu -->
+        <div id="mainMenu" class="overlay screen active">
+            <div class="glass-panel">
+                <h1 class="glow-text">COLOR SHIFT<br><span>REACTOR</span></h1>
+
+                <div id="authSection" class="auth-box">
+                    <div id="g_id_onload"></div>
+                    <div class="g_id_signin"></div>
+                    <div id="userProfile" class="user-profile" style="display: none;">
+                        <img id="userAvatar" src="" alt="avatar">
+                        <span id="userName">Player</span>
+                        <button id="logoutBtn" class="btn-small">Logout</button>
+                    </div>
+                </div>
+
+                <div class="menu-buttons">
+                    <button id="playBtn" class="btn primary">TAP TO SHIFT</button>
+                    <button id="dailyParamsBtn" class="btn secondary">DAILY CHALLENGE</button>
+                    <div class="row-btns">
+                        <button id="leaderboardBtn" class="btn icon-btn">LEADERBOARD</button>
+                        <button id="shopBtn" class="btn icon-btn">SHOP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="overlay screen">
+            <div class="glass-panel">
+                <h2 class="glow-text">REACTOR FAILED</h2>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span>SCORE</span>
+                        <h3 id="finalScoreDisplay">0</h3>
+                    </div>
+                    <div class="stat-box">
+                        <span>BEST</span>
+                        <h3 id="bestScoreDisplay">0</h3>
+                    </div>
+                </div>
+                <div id="submitNotice" class="notice subtle"></div>
+                <div class="menu-buttons">
+                    <button id="retryBtn" class="btn primary">TRY AGAIN</button>
+                    <div class="row-btns">
+                        <button id="shareBtn" class="btn secondary">SHARE</button>
+                        <button id="gameOverLbBtn" class="btn secondary">LEADERBOARD</button>
+                    </div>
+                    <button id="menuBtn" class="btn outline">MAIN MENU</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard Screen -->
+        <div id="leaderboardScreen" class="overlay screen">
+            <div class="glass-panel large">
+                <button class="close-btn" data-target="leaderboardScreen">×</button>
+                <h2>RANKINGS</h2>
+                <div class="tabs">
+                    <button id="tabGlobal" class="tab active">GLOBAL</button>
+                    <button id="tabDaily" class="tab">DAILY</button>
+                </div>
+                <div class="list-container">
+                    <ul id="leaderboardList" class="rank-list">
+                        <li class="loading">Loading...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop Screen -->
+        <div id="shopScreen" class="overlay screen">
+            <div class="glass-panel large">
+                <button class="close-btn" data-target="shopScreen">×</button>
+                <h2>REACTOR CORES</h2>
+                <div class="flux-balance">
+                    Available: <span class="flux-icon">✧</span> <span id="shopFlux">0</span>
+                </div>
+                <div class="list-container">
+                    <div id="shopGrid" class="shop-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offline / Error Toast -->
+        <div id="toast" class="toast hidden">Message</div>
+
+        <!-- Background Music -->
+        <audio id="bgMusic" loop preload="auto">
+            <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+
+</html>

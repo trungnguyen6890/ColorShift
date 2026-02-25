@@ -1,0 +1,12 @@
+name = "color-shift-reactor"
+compatibility_date = "2024-03-20"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "LB_KV"
+id = "mock-id-for-local-dev"
+preview_id = "mock-id-for-local-dev"
+
+[vars]
+# Add to .dev.vars for local dev:
+# GOOGLE_CLIENT_ID="your-google-client-id"
