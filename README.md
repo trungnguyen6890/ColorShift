@@ -7,7 +7,7 @@ Uses Vanilla HTML/CSS/JS + Canvas, with Google Identity Services for authenticat
 
 1. **Install dependencies:**
    ```bash
-   npm i
+   npm i hi
    ```
 
 2. **Set up environment variables:**
