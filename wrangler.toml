@@ -4,8 +4,8 @@ pages_build_output_dir = "."
 
 [[kv_namespaces]]
 binding = "LB_KV"
-id = "mock-id-for-local-dev"
-preview_id = "mock-id-for-local-dev"
+id = "f48ab3d8c99749e4a1612bbc335e97a9"
+preview_id = "f48ab3d8c99749e4a1612bbc335e97a9"
 
 [vars]
 # Add to .dev.vars for local dev:
